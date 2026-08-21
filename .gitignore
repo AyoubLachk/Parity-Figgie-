@@ -1,0 +1,46 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+
+# Packaging artifacts
+*.egg-info/
+dist/
+build/
+
+# Editor and OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Project outputs (results, logs, saved runs)
+results/
+*.parquet
+*.log
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+.venv/, venv/, env/ — three common names for the same thing. Costs nothing to cover all three.
+
+.vscode/ is a judgement call. It holds your editor settings, which are personal, so most people exclude it. Some projects commit it deliberately to share a team config. Exclude it.
+
+results/, *.parquet, *.log — nothing yet, but on day 19 your tournament will write large output files. Better to have the rule already in place than to accidentally push a 200 MB results file.
+
+Thumbs.db is Windows' image thumbnail cache. .DS_Store is the macOS equivalent. Both harmless, both clutter every diff.
